@@ -1,7 +1,7 @@
 package go_tinygo_errors
 
 import (
-	tinygotypes "github.com/ralvarezdev/tinygo-types"
+	tinygoerrors "github.com/ralvarezdev/tinygo-errors"
 )
 
 const (
@@ -22,11 +22,11 @@ const (
 )
 
 const (
-	ErrorCodeBuffersInvalidBufferSize tinygotypes.ErrorCode = ErrorCodeBuffersStartNumber + iota
+	ErrorCodeBuffersInvalidBufferSize tinygoerrors.ErrorCode = ErrorCodeBuffersStartNumber + iota
 )
 
 const (
-	ErrorCodeBNO08XPacketBufferIndexOutOfRange tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeBNO08XStartNumber)
+	ErrorCodeBNO08XPacketBufferIndexOutOfRange tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeBNO08XStartNumber)
 	ErrorCodeBNO08XInvalidChannelNumber
 	ErrorCodeBNO08XNilPacketReader
 	ErrorCodeBNO08XNilPacketWriter
@@ -138,11 +138,11 @@ const (
 )
 
 const (
-	ErrorCodePullUpResistorNilHandler = tinygotypes.ErrorCode(iota + ErrorCodePullUpResistorStartNumber)
+	ErrorCodePullUpResistorNilHandler = tinygoerrors.ErrorCode(iota + ErrorCodePullUpResistorStartNumber)
 )
 
 const (
-	ErrorCodeESCMotorFailedToConfigurePWM tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
+	ErrorCodeESCMotorFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
 	ErrorCodeESCMotorFailedToInitializeServo
 	ErrorCodeESCMotorSpeedOutOfRange
 	ErrorCodeESCMotorSpeedBelowMinPulseWidth
@@ -151,7 +151,7 @@ const (
 )
 
 const (
-	ErrorCodeServoFailedToConfigurePWM tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeServoStartNumber)
+	ErrorCodeServoFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeServoStartNumber)
 	ErrorCodeServoFailedToInitializeServo
 	ErrorCodeServoAngleOutOfRange
 	ErrorCodeServoAngleBelowMinPulseWidth
@@ -162,7 +162,7 @@ const (
 
 var (
 	// ErrorCodeMessages maps error codes to their corresponding error messages.
-	ErrorCodeMessages = map[tinygotypes.ErrorCode]string{
+	ErrorCodeMessages = map[tinygoerrors.ErrorCode]string{
 		// Buffers errors
 		ErrorCodeBuffersInvalidBufferSize: "invalid buffer size",
 
