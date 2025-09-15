@@ -5,24 +5,6 @@ import (
 )
 
 const (
-	// ErrorCodeChallengeStartNumber is the starting number for challenge-related error codes.
-	ErrorCodeChallengeStartNumber uint16 = 1
-
-	// ErrorCodeCyw43439StartNumber is the starting number for CYW43439-related error codes.
-	ErrorCodeCyw43439StartNumber uint16 = 10
-
-	// ErrorCodeLEDStartNumber is the starting number for LED-related error codes.
-	ErrorCodeLEDStartNumber uint16 = 20
-
-	// ErrorCodeMovementStartNumber is the starting number for movement-related error codes.
-	ErrorCodeMovementStartNumber uint16 = 30
-
-	// ErrorCodeSwitchStartNumber is the starting number for switch-related error codes.
-	ErrorCodeSwitchStartNumber uint16 = 40
-
-	// ErrorCodeUSBCDCStartNumber is the starting number for USB CDC-related error codes.
-	ErrorCodeUSBCDCStartNumber uint16 = 50
-
 	// ErrorCodeBuffersStartNumber is the starting number for error code buffers
 	ErrorCodeBuffersStartNumber = 4000
 
@@ -37,63 +19,6 @@ const (
 
 	// ErrorCodeServoStartNumber is the starting number for servo-related error codes.
 	ErrorCodeServoStartNumber uint16 = 5230
-)
-
-const (
-	ErrorCodeChallengeNilHandler tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeChallengeStartNumber)
-	ErrorCodeChallengeNilObstaclesPullUpHandler
-	ErrorCodeChallengeNilParkingPullUpHandler
-	ErrorCodeChallengeInvalidChallengeUint8
-)
-
-const (
-	ErrorCodeCyw43439NilDevice tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeCyw43439StartNumber)
-	ErrorCodeCyw43439FailedToInitialize
-)
-
-const (
-	ErrorCodeLEDNilHandler tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeLEDStartNumber)
-	ErrorCodeLEDNegativeBlinkCount
-	ErrorCodeLEDNegativeDelayDuration
-)
-
-const (
-	ErrorCodeMovementNilHandler tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeMovementStartNumber)
-)
-
-const (
-	ErrorCodeSwitchNilOnEventFunction tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeSwitchStartNumber)
-)
-
-const (
-	ErrorCodeUSBCDCNilHandler tinygotypes.ErrorCode = tinygotypes.ErrorCode(iota + ErrorCodeUSBCDCStartNumber)
-	ErrorCodeUSBCDCNilOutgoingCategory
-	ErrorCodeUSBCDCUnknownOutgoingCategory
-	ErrorCodeUSBCDCNilIncomingCategory
-	ErrorCodeUSBCDCUnknownIncomingCategory
-	ErrorCodeUSBCDCInvalidMaxMessageDataLength
-	ErrorCodeUSBCDCFailedToSendStartCharacter
-	ErrorCodeUSBCDCFailedToSendOutgoingCategory
-	ErrorCodeUSBCDCFailedToSendControlCharacter
-	ErrorCodeUSBCDCFailedToSendMessageContent
-	ErrorCodeUSBCDCFailedToSendEndCharacter
-	ErrorCodeUSBCDCBufferTooShortForRawFloat64
-	ErrorCodeUSBCDCUnknownQuaternionIndex
-	ErrorCodeUSBCDCUnknownEulerDegreesIndex
-	ErrorCodeUSBCDCUnknownIncomingStatus
-	ErrorCodeUSBCDCUnknownOutgoingStatus
-	ErrorCodeUSBCDCUnknownChallenge
-	ErrorCodeUSBCDCBufferTooShortForRawUint16
-	ErrorCodeUSBCDCBufferTooShortForRawUint8
-	ErrorCodeUSBCDCConfirmationMessageTimeout
-	ErrorCodeUSBCDCReadByteTimeout
-	ErrorCodeUSBCDCFailedReadingFromSerial
-	ErrorCodeUSBCDCFailedToConfigureUSBCDC
-	ErrorCodeUSBCDCFailedToSendInitializationMessage
-	ErrorCodeUSBCDCInvalidIncomingMessageDataLength
-	ErrorCodeUSBCDCInvalidOutgoingMessageDataLength
-	ErrorCodeUSBCDCReadMessageTimeout
-	ErrorCodeUSBCDCReceivedUnexpectedConfirmationMessage
 )
 
 const (
@@ -238,57 +163,6 @@ const (
 var (
 	// ErrorCodeMessages maps error codes to their corresponding error messages.
 	ErrorCodeMessages = map[tinygotypes.ErrorCode]string{
-		// Challenge errors
-		ErrorCodeChallengeNilHandler:                "challenge handler cannot be nil",
-		ErrorCodeChallengeNilObstaclesPullUpHandler: "challenge obstacles pull-up handler cannot be nil",
-		ErrorCodeChallengeNilParkingPullUpHandler:   "challenge parking pull-up handler cannot be nil",
-		ErrorCodeChallengeInvalidChallengeUint8:     "invalid challenge uint8",
-
-		// Cyw43439 errors
-		ErrorCodeCyw43439NilDevice:          "cyw43439 device cannot be nil",
-		ErrorCodeCyw43439FailedToInitialize: "cyw43439 failed to initialize",
-
-		// LED errors
-		ErrorCodeLEDNilHandler:            "led handler cannot be nil",
-		ErrorCodeLEDNegativeBlinkCount:    "led blink count cannot be negative",
-		ErrorCodeLEDNegativeDelayDuration: "led delay duration cannot be negative",
-
-		// Movement errors
-		ErrorCodeMovementNilHandler: "movement handler cannot be nil",
-
-		// Switch errors
-		ErrorCodeSwitchNilOnEventFunction: "switch onevent function cannot be nil",
-
-		// USB CDC errors
-		ErrorCodeUSBCDCNilHandler:                            "usb-cdc handler cannot be nil",
-		ErrorCodeUSBCDCNilOutgoingCategory:                   "usb-cdc outgoing category cannot be nil",
-		ErrorCodeUSBCDCUnknownOutgoingCategory:               "usb-cdc unknown outgoing category",
-		ErrorCodeUSBCDCNilIncomingCategory:                   "usb-cdc incoming category cannot be nil",
-		ErrorCodeUSBCDCUnknownIncomingCategory:               "usb-cdc unknown incoming category",
-		ErrorCodeUSBCDCInvalidMaxMessageDataLength:           "usb-cdc invalid max message data length",
-		ErrorCodeUSBCDCFailedToSendStartCharacter:            "usb-cdc failed to send start character",
-		ErrorCodeUSBCDCFailedToSendOutgoingCategory:          "usb-cdc failed to send outgoing category",
-		ErrorCodeUSBCDCFailedToSendControlCharacter:          "usb-cdc failed to send control character",
-		ErrorCodeUSBCDCFailedToSendMessageContent:            "usb-cdc failed to send message content",
-		ErrorCodeUSBCDCFailedToSendEndCharacter:              "usb-cdc failed to send end character",
-		ErrorCodeUSBCDCBufferTooShortForRawFloat64:           "usb-cdc buffer too short for raw float64",
-		ErrorCodeUSBCDCUnknownQuaternionIndex:                "usb-cdc unknown quaternion index",
-		ErrorCodeUSBCDCUnknownEulerDegreesIndex:              "usb-cdc unknown euler degrees index",
-		ErrorCodeUSBCDCUnknownIncomingStatus:                 "usb-cdc unknown incoming status",
-		ErrorCodeUSBCDCUnknownOutgoingStatus:                 "usb-cdc unknown outgoing status",
-		ErrorCodeUSBCDCUnknownChallenge:                      "usb-cdc unknown challenge",
-		ErrorCodeUSBCDCBufferTooShortForRawUint16:            "usb-cdc buffer too short for raw uint16",
-		ErrorCodeUSBCDCBufferTooShortForRawUint8:             "usb-cdc buffer too short for raw uint8",
-		ErrorCodeUSBCDCConfirmationMessageTimeout:            "usb-cdc confirmation message timeout",
-		ErrorCodeUSBCDCReadByteTimeout:                       "usb-cdc read byte timeout",
-		ErrorCodeUSBCDCFailedReadingFromSerial:               "usb-cdc failed reading from serial",
-		ErrorCodeUSBCDCFailedToConfigureUSBCDC:               "usb-cdc failed to configure",
-		ErrorCodeUSBCDCFailedToSendInitializationMessage:     "usb-cdc failed to send initialization message",
-		ErrorCodeUSBCDCInvalidIncomingMessageDataLength:      "usb-cdc invalid incoming message data length",
-		ErrorCodeUSBCDCInvalidOutgoingMessageDataLength:      "usb-cdc invalid outgoing message data length",
-		ErrorCodeUSBCDCReadMessageTimeout:                    "usb-cdc read message timeout",
-		ErrorCodeUSBCDCReceivedUnexpectedConfirmationMessage: "usb-cdc received unexpected confirmation message",
-
 		// Buffers errors
 		ErrorCodeBuffersInvalidBufferSize: "invalid buffer size",
 
