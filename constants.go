@@ -135,6 +135,9 @@ const (
 	ErrorCodeBNO08XNilWaitForPacketFunction
 	ErrorCodeBNO08XInvalidMode
 	ErrorCodeBNO08XUnknownModeAttemptingSoftwareReset
+	ErrorCodeBNO08XUARTRVCInvalidYawDegreesValue
+	ErrorCodeBNO08XUARTRVCInvalidPitchDegreesValue
+	ErrorCodeBNO08XUARTRVCInvalidRollDegreesValue
 )
 
 const (
@@ -276,6 +279,9 @@ var (
 		ErrorCodeBNO08XNilWaitForPacketFunction:                              "bno08x wait for packet function cannot be nil",
 		ErrorCodeBNO08XInvalidMode:                                           "bno08x invalid mode",
 		ErrorCodeBNO08XUnknownModeAttemptingSoftwareReset:                    "bno08x unknown mode attempting software reset",
+		ErrorCodeBNO08XUARTRVCInvalidYawDegreesValue:                        "bno08x uart rvc invalid yaw degrees value",
+		ErrorCodeBNO08XUARTRVCInvalidPitchDegreesValue:                      "bno08x uart rvc invalid pitch degrees value",
+		ErrorCodeBNO08XUARTRVCInvalidRollDegreesValue:                       "bno08x uart rvc invalid roll degrees value",
 
 		// Pull-up resistor errors
 		ErrorCodePullUpResistorNilHandler: "pull-up resistor handler cannot be nil",
