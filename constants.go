@@ -39,7 +39,6 @@ const (
 	ErrorCodeBNO08XUARTRVCInvalidChecksum
 	ErrorCodeBNO08XUARTRVCByteTimeout
 	ErrorCodeBNO08XUARTRVCFailedToReadByte
-	ErrorCodeBNO08XFailedToParseFrame
 	ErrorCodeBNO08XUARTRVCUARTTimeout
 	ErrorCodeBNO08XFailedToCreatePacket
 	ErrorCodeBNO08XFailedToSetUARTFormat
@@ -184,7 +183,6 @@ var (
 		ErrorCodeBNO08XUARTRVCInvalidChecksum:                                "bno08x uart rvc invalid checksum",
 		ErrorCodeBNO08XUARTRVCByteTimeout:                                    "bno08x uart rvc byte timeout",
 		ErrorCodeBNO08XUARTRVCFailedToReadByte:                               "bno08x uart rvc failed to read byte",
-		ErrorCodeBNO08XFailedToParseFrame:                                    "bno08x failed to parse frame",
 		ErrorCodeBNO08XUARTRVCUARTTimeout:                                    "bno08x uart rvc uart timeout",
 		ErrorCodeBNO08XFailedToCreatePacket:                                  "bno08x failed to create packet",
 		ErrorCodeBNO08XFailedToSetUARTFormat:                                 "bno08x failed to set uart format",
