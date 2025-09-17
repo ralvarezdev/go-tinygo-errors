@@ -23,6 +23,7 @@ const (
 
 const (
 	ErrorCodeBuffersInvalidBufferSize tinygoerrors.ErrorCode = ErrorCodeBuffersStartNumber + iota
+	ErrorCodeBuffersTooMuchPrecisionDigitsForFloat64
 )
 
 const (
@@ -168,6 +169,7 @@ var (
 	ErrorCodeMessages = map[tinygoerrors.ErrorCode]string{
 		// Buffers errors
 		ErrorCodeBuffersInvalidBufferSize: "invalid buffer size",
+		ErrorCodeBuffersTooMuchPrecisionDigitsForFloat64: "too much precision digits for float64",
 
 		// BNO08X errors
 		ErrorCodeBNO08XPacketBufferIndexOutOfRange:                           "bno08x packet buffer index out of range",
