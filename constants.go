@@ -151,6 +151,7 @@ const (
 	ErrorCodeESCMotorSpeedBelowMinPulseWidth
 	ErrorCodeESCMotorSpeedAboveMaxPulseWidth
 	ErrorCodeESCMotorNilHandler
+	ErrorCodeESCMotorInvalidNeutralPulseWidth
 )
 
 const (
@@ -293,6 +294,7 @@ var (
 		ErrorCodeESCMotorSpeedBelowMinPulseWidth: "esc motor speed below min pulse width",
 		ErrorCodeESCMotorSpeedAboveMaxPulseWidth: "esc motor speed above max pulse width",
 		ErrorCodeESCMotorNilHandler:              "esc motor handler cannot be nil",
+		ErrorCodeESCMotorInvalidNeutralPulseWidth: "esc motor invalid neutral pulse width",
 
 		// Servo errors
 		ErrorCodeServoFailedToConfigurePWM:    "servo failed to configure pwm",
