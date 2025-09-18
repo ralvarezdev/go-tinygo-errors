@@ -27,7 +27,7 @@ const (
 )
 
 const (
-	ErrorCodeBNO08XPacketBufferIndexOutOfRange tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeBNO08XStartNumber)
+	ErrorCodeBNO08XPacketBufferIndexOutOfRange = tinygoerrors.ErrorCode(iota + ErrorCodeBNO08XStartNumber)
 	ErrorCodeBNO08XInvalidChannelNumber
 	ErrorCodeBNO08XNilPacketReader
 	ErrorCodeBNO08XNilPacketWriter
@@ -145,17 +145,18 @@ const (
 )
 
 const (
-	ErrorCodeESCMotorFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
+	ErrorCodeESCMotorFailedToConfigurePWM = tinygoerrors.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
 	ErrorCodeESCMotorFailedToInitializeServo
 	ErrorCodeESCMotorSpeedOutOfRange
 	ErrorCodeESCMotorSpeedBelowMinPulseWidth
 	ErrorCodeESCMotorSpeedAboveMaxPulseWidth
 	ErrorCodeESCMotorNilHandler
 	ErrorCodeESCMotorInvalidNeutralPulseWidth
+	ErrorCodeESCMotorUnknownDirection
 )
 
 const (
-	ErrorCodeServoFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeServoStartNumber)
+	ErrorCodeServoFailedToConfigurePWM = tinygoerrors.ErrorCode(iota + ErrorCodeServoStartNumber)
 	ErrorCodeServoFailedToInitializeServo
 	ErrorCodeServoAngleOutOfRange
 	ErrorCodeServoAngleBelowMinPulseWidth
@@ -168,7 +169,7 @@ var (
 	// ErrorCodeMessages maps error codes to their corresponding error messages.
 	ErrorCodeMessages = map[tinygoerrors.ErrorCode]string{
 		// Buffers errors
-		ErrorCodeBuffersInvalidBufferSize: "invalid buffer size",
+		ErrorCodeBuffersInvalidBufferSize:                "invalid buffer size",
 		ErrorCodeBuffersTooMuchPrecisionDigitsForFloat64: "too much precision digits for float64",
 
 		// BNO08X errors
@@ -280,21 +281,22 @@ var (
 		ErrorCodeBNO08XNilWaitForPacketFunction:                              "bno08x wait for packet function cannot be nil",
 		ErrorCodeBNO08XInvalidMode:                                           "bno08x invalid mode",
 		ErrorCodeBNO08XUnknownModeAttemptingSoftwareReset:                    "bno08x unknown mode attempting software reset",
-		ErrorCodeBNO08XUARTRVCInvalidYawDegreesValue:                        "bno08x uart rvc invalid yaw degrees value",
-		ErrorCodeBNO08XUARTRVCInvalidPitchDegreesValue:                      "bno08x uart rvc invalid pitch degrees value",
-		ErrorCodeBNO08XUARTRVCInvalidRollDegreesValue:                       "bno08x uart rvc invalid roll degrees value",
+		ErrorCodeBNO08XUARTRVCInvalidYawDegreesValue:                         "bno08x uart rvc invalid yaw degrees value",
+		ErrorCodeBNO08XUARTRVCInvalidPitchDegreesValue:                       "bno08x uart rvc invalid pitch degrees value",
+		ErrorCodeBNO08XUARTRVCInvalidRollDegreesValue:                        "bno08x uart rvc invalid roll degrees value",
 
 		// Pull-up resistor errors
 		ErrorCodePullUpResistorNilHandler: "pull-up resistor handler cannot be nil",
 
 		// ESC motor errors
-		ErrorCodeESCMotorFailedToConfigurePWM:    "esc motor failed to configure pwm",
-		ErrorCodeESCMotorFailedToInitializeServo: "esc motor failed to initialize servo",
-		ErrorCodeESCMotorSpeedOutOfRange:         "esc motor speed out of range",
-		ErrorCodeESCMotorSpeedBelowMinPulseWidth: "esc motor speed below min pulse width",
-		ErrorCodeESCMotorSpeedAboveMaxPulseWidth: "esc motor speed above max pulse width",
-		ErrorCodeESCMotorNilHandler:              "esc motor handler cannot be nil",
+		ErrorCodeESCMotorFailedToConfigurePWM:     "esc motor failed to configure pwm",
+		ErrorCodeESCMotorFailedToInitializeServo:  "esc motor failed to initialize servo",
+		ErrorCodeESCMotorSpeedOutOfRange:          "esc motor speed out of range",
+		ErrorCodeESCMotorSpeedBelowMinPulseWidth:  "esc motor speed below min pulse width",
+		ErrorCodeESCMotorSpeedAboveMaxPulseWidth:  "esc motor speed above max pulse width",
+		ErrorCodeESCMotorNilHandler:               "esc motor handler cannot be nil",
 		ErrorCodeESCMotorInvalidNeutralPulseWidth: "esc motor invalid neutral pulse width",
+		ErrorCodeESCMotorUnknownDirection:         "esc motor unknown direction",
 
 		// Servo errors
 		ErrorCodeServoFailedToConfigurePWM:    "servo failed to configure pwm",
