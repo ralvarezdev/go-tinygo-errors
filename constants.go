@@ -163,6 +163,7 @@ const (
 	ErrorCodeServoAngleAboveMaxPulseWidth
 	ErrorCodeServoFailedToSetServoAngle
 	ErrorCodeServoNilHandler
+	ErrorCodeServoUnknownDirection
 )
 
 var (
@@ -306,5 +307,6 @@ var (
 		ErrorCodeServoAngleAboveMaxPulseWidth: "servo angle above max pulse width",
 		ErrorCodeServoFailedToSetServoAngle:   "servo failed to set angle",
 		ErrorCodeServoNilHandler:              "servo handler cannot be nil",
+		ErrorCodeServoUnknownDirection:        "servo unknown direction",
 	}
 )
