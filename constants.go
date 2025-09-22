@@ -145,25 +145,29 @@ const (
 )
 
 const (
-	ErrorCodeESCMotorFailedToConfigurePWM = tinygoerrors.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
-	ErrorCodeESCMotorFailedToInitializeServo
+	ErrorCodeESCMotorFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeESCMotorStartNumber)
+	ErrorCodeESCMotorZeroFrequency
 	ErrorCodeESCMotorSpeedOutOfRange
-	ErrorCodeESCMotorSpeedBelowMinPulseWidth
-	ErrorCodeESCMotorSpeedAboveMaxPulseWidth
 	ErrorCodeESCMotorNilHandler
 	ErrorCodeESCMotorInvalidNeutralPulseWidth
-	ErrorCodeESCMotorUnknownDirection
+	ErrorCodeESCMotorInvalidMinPulseWidth
+	ErrorCodeESCMotorInvalidMaxPulseWidth
+	ErrorCodeESCMotorInvalidMaxForwardSpeed
+	ErrorCodeESCMotorInvalidMaxBackwardSpeed
+	ErrorCodeESCMotorFailedToGetPWMChannel
 )
 
 const (
-	ErrorCodeServoFailedToConfigurePWM = tinygoerrors.ErrorCode(iota + ErrorCodeServoStartNumber)
-	ErrorCodeServoFailedToInitializeServo
+	ErrorCodeServoFailedToConfigurePWM tinygoerrors.ErrorCode = tinygoerrors.ErrorCode(iota + ErrorCodeServoStartNumber)
+	ErrorCodeServoZeroFrequency
 	ErrorCodeServoAngleOutOfRange
-	ErrorCodeServoAngleBelowMinPulseWidth
-	ErrorCodeServoAngleAboveMaxPulseWidth
-	ErrorCodeServoFailedToSetServoAngle
+	ErrorCodeServoInvalidMinPulseWidth
+	ErrorCodeServoInvalidMaxPulseWidth
 	ErrorCodeServoNilHandler
 	ErrorCodeServoUnknownDirection
+	ErrorCodeServoFailedToGetPWMChannel
+	ErrorCodeServoInvalidActuationRange
+	ErrorCodeServoInvalidCenterAngle
 )
 
 var (
@@ -290,23 +294,27 @@ var (
 		ErrorCodePullUpResistorNilHandler: "pull-up resistor handler cannot be nil",
 
 		// ESC motor errors
-		ErrorCodeESCMotorFailedToConfigurePWM:     "esc motor failed to configure pwm",
-		ErrorCodeESCMotorFailedToInitializeServo:  "esc motor failed to initialize servo",
-		ErrorCodeESCMotorSpeedOutOfRange:          "esc motor speed out of range",
-		ErrorCodeESCMotorSpeedBelowMinPulseWidth:  "esc motor speed below min pulse width",
-		ErrorCodeESCMotorSpeedAboveMaxPulseWidth:  "esc motor speed above max pulse width",
-		ErrorCodeESCMotorNilHandler:               "esc motor handler cannot be nil",
+		ErrorCodeESCMotorFailedToConfigurePWM:    "esc motor failed to configure pwm",
+		ErrorCodeESCMotorZeroFrequency:           "esc motor frequency cannot be zero",
+		ErrorCodeESCMotorSpeedOutOfRange:         "esc motor speed out of range",
+		ErrorCodeESCMotorNilHandler:              "esc motor handler cannot be nil",
 		ErrorCodeESCMotorInvalidNeutralPulseWidth: "esc motor invalid neutral pulse width",
-		ErrorCodeESCMotorUnknownDirection:         "esc motor unknown direction",
+		ErrorCodeESCMotorInvalidMinPulseWidth:    "esc motor invalid min pulse width",
+		ErrorCodeESCMotorInvalidMaxPulseWidth:    "esc motor invalid max pulse width",
+		ErrorCodeESCMotorInvalidMaxForwardSpeed:   "esc motor invalid max forward speed",
+		ErrorCodeESCMotorInvalidMaxBackwardSpeed:  "esc motor invalid max backward speed",
+		ErrorCodeESCMotorFailedToGetPWMChannel:    "esc motor failed to get pwm channel",
 
 		// Servo errors
 		ErrorCodeServoFailedToConfigurePWM:    "servo failed to configure pwm",
-		ErrorCodeServoFailedToInitializeServo: "servo failed to initialize",
+		ErrorCodeServoZeroFrequency:           "servo frequency cannot be zero",
 		ErrorCodeServoAngleOutOfRange:         "servo angle out of range",
-		ErrorCodeServoAngleBelowMinPulseWidth: "servo angle below min pulse width",
-		ErrorCodeServoAngleAboveMaxPulseWidth: "servo angle above max pulse width",
-		ErrorCodeServoFailedToSetServoAngle:   "servo failed to set angle",
-		ErrorCodeServoNilHandler:              "servo handler cannot be nil",
+		ErrorCodeServoInvalidMinPulseWidth:    "servo invalid min pulse width",
+		ErrorCodeServoInvalidMaxPulseWidth:    "servo invalid max pulse width",
 		ErrorCodeServoUnknownDirection:        "servo unknown direction",
+		ErrorCodeServoFailedToGetPWMChannel:   "servo failed to get pwm channel",
+		ErrorCodeServoInvalidActuationRange:   "servo invalid actuation range",
+		ErrorCodeServoInvalidCenterAngle:      "servo invalid center angle",
+		ErrorCodeServoNilHandler:              "servo handler cannot be nil",
 	}
 )
